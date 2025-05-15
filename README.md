@@ -1,34 +1,29 @@
-# VíaMovil - Plataforma de Registro
 
-¡Bienvenido a VíaMovil! 🌍📱  
-Esta es una versión web del proceso de registro para nuevos usuarios del servicio de telefonía móvil **VíaMovil**, adaptado para visualización en móviles y computadoras.
+# Proyecto ViaMovil
 
-## 🌐 Características del proyecto
+Este proyecto es una interfaz web adaptada para móviles de la empresa de telefonía ViaMovil.
 
-- Formulario de registro completo con:
-  - Nombre completo
-  - Ciudad de residencia
-  - Identificación
-  - Dirección
-  - Correo electrónico
-  - Contraseña y confirmación
-  - Subida de comprobante de pago
-- Simulación de carga y mensaje de confirmación
-- Página de inicio con información de la empresa
-- Opción de iniciar sesión
-- Compatible con móviles
-- Diseño moderno y adaptable
+## Contenido
 
-## 🚀 Instrucciones para publicación en GitHub Pages
+- `index.html`: Página principal con formulario de registro de usuarios nuevos.
+- `login.html`: Página para iniciar sesión con validación visual.
+- `inicio.html`: Página de inicio con menú desplegable.
+- `exito.html`: Página que informa el éxito del registro y pago.
+- `verificando.html`: Página de carga simulando validación de datos.
 
-1. Sube todos los archivos a este repositorio.
-2. Asegúrate de que el archivo principal se llame `index.html`.
-3. Ve a `Settings > Pages`.
-4. En **Source**, elige la rama `main` y la carpeta raíz `/`.
-5. Haz clic en **Save** y espera unos segundos.
-6. Tu sitio estará disponible en:  
-   `https://TU_USUARIO.github.io/NOMBRE_DEL_REPO`
+## Recursos
 
----
+- `logo.png`: Logo oficial de ViaMovil redimensionado para web.
+- `fondo.png`: Fondo con mapa del mundo y líneas de red.
 
-📞 **VíaMovil – La red inteligente que te acompaña.**
+## Cómo usar
+
+1. Suba todos los archivos a su servidor web.
+2. Asegúrese de que `index.html` sea el punto de entrada principal.
+3. Todos los enlaces funcionan localmente sin necesidad de backend.
+4. El diseño está optimizado para dispositivos móviles.
+
+## Notas
+
+- El formulario permite elegir entre tarjeta y criptomonedas como método de pago.
+- El flujo simula un sistema completo sin conectarse a una base de datos real.
