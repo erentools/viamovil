@@ -5,6 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Usuarios Nuevos</title>
+    <style>
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+h2 {
+    color: gold;
+}
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
     <script>
         function mostrarMetodo() {
             var metodo = document.getElementById("metodoPago").value;
@@ -17,41 +42,9 @@
             window.location.href = "verificando.html";
         }
     </script>
-    <style>
-body {
-    background-image: url('fondo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-}
-h2 {
-    color: gold;
-}
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        header img {
-            height: 40px;
-        }
-        form {
-            max-width: 500px;
-            margin: auto;
-        }
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="ViaMovil Logo">
-    </header>
+    <header><img src="logo.png" alt="ViaMovil Logo" style="height: 60px; margin: 10px;"></header>
     <form onsubmit="event.preventDefault(); enviarFormulario();">
         <h2>Registro Usuarios Nuevos</h2>
         <input type="text" placeholder="Nombre Completo" required>
@@ -79,6 +72,8 @@ h2 {
                 <option>USDT</option>
                 <option>BNB</option>
             </select>
+            <input type="text" placeholder="Wallet de envío">
+            <input type="text" placeholder="Hash de transacción">
         </div>
         <button id="enviar" type="submit" disabled>Enviar Datos</button>
     </form>

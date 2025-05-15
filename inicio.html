@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ViaMovil - Inicio</title>
     <style>
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-image: url('fondo.png');
     background-size: cover;
     background-position: center;
@@ -17,13 +19,6 @@ h2 {
     color: gold;
 }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('fondo.png');
-            background-size: cover;
-            color: white;
-        }
         header {
             display: flex;
             justify-content: space-between;
@@ -63,6 +58,22 @@ h2 {
         .menu:hover .dropdown-content {
             display: block;
         }
+        .mensaje {
+            animation: mover 10s linear infinite;
+            font-size: 1.2em;
+            color: gold;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+        }
+        @keyframes mover {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .info {
+            margin: 30px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -71,10 +82,14 @@ h2 {
         <div class="menu">
             <button>☰</button>
             <div class="dropdown-content">
-                <a href="inicio.html">Inicio</a>
-                <a href="registro.html">Registrarme</a><a href="login.html">Iniciar Sesión</a>
+                <a href="index.html">Registrarme</a>
+                <a href="login.html">Iniciar Sesión</a>
             </div>
         </div>
     </header>
+    <div class="mensaje">Por solo 10 euros disfruta de 3 meses de minutos e internet ilimitado</div>
+    <div class="info">
+        <p>ViaMovil es la red inteligente que mejora automáticamente tu cobertura sin cambiar tu operador actual. Disfruta de internet de alta velocidad en más de 120 países, minutos ilimitados y una experiencia sin interrupciones desde cualquier dispositivo móvil. ¡Activa tu Sim Virtual en minutos!</p>
+    </div>
 </body>
 </html>
